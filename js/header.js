@@ -64,9 +64,9 @@
 		
         var urls="";
         if(str2=="index.html"||str2=="header.html"){
-            urls="sanjia/json/list_data.json";
+            urls="json/list_data.json";
 	    }else{
-            urls="sanjia/json/list_data.json";
+            urls="../json/list_data.json";
 		}
 	     //购物车数量
         cartNum();
