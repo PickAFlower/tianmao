@@ -72,7 +72,8 @@
         cartNum();
 		function cartNum(){
 		var user=localStorage.user;
-		if($("#username").text()=="登录"){
+		if(user){
+			if($("#username").text()=="登录"){
 			$(".shopping_cart>span").text("0")
 		}else{
 			$.each(JSON.parse(user), function(index,ele) {
@@ -80,6 +81,7 @@
 					$(".shopping_cart>span").text(ele.arr.length)
 				}
 			});
+		}
 		}
 		}
 				
