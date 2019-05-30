@@ -148,6 +148,7 @@
     	
         //菜单移入移出
 		$(".hd_menu>li").mouseover(function(){
+			console.log(1)
 			$("#center_wrap").html("")
 			var i=$(this).index();
 			var arr=datas[i-1].category2;
