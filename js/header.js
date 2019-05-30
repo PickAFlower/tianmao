@@ -164,6 +164,8 @@
 					li.innerText=arr[j].sgroup[k].title;
 					ul.appendChild(li)
 				}
+				console.log(ul)
+				console.log(datas)
 			$("#center_wrap").append(ul)
 			}
 			//列表页
