@@ -155,4 +155,18 @@
 			</div>
 		</div>
 	</body>
+    <!--<script src="jQueryDownload/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+    <script type="text/javascript">
+    	$(function(){
+    		var loca=location.href.substring(location.href.lastIndexOf("/")+1);
+    		var str=loca.substring(0,loca.indexOf("l")+1);
+    		var scripts=document.createElement("script");
+    		if(str=="index.html"||str=="header.html"){
+    			scripts.src="js/header.js"
+    		}else{
+    			scripts.src="../js/header.js"
+    		}
+    		document.body.appendChild(scripts)
+    	})
+    </script>
 </html>

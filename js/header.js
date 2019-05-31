@@ -74,14 +74,14 @@
 		var user=localStorage.user;
 		if(user){
 			if($("#username").text()=="登录"){
-			$(".shopping_cart>span").text("0")
-		}else{
-			$.each(JSON.parse(user), function(index,ele) {
-				if(ele.user==username){
-					$(".shopping_cart>span").text(ele.arr.length)
-				}
-			});
-		}
+				$(".shopping_cart>span").text("0")
+			}else{
+				$.each(JSON.parse(user), function(index,ele) {
+					if(ele.user==username){
+						$(".shopping_cart>span").text(ele.arr.length)
+					}
+				});
+			}
 		}
 		}
 				
@@ -148,7 +148,6 @@
     	
         //菜单移入移出
 		$(".hd_menu>li").mouseover(function(){
-			console.log(1)
 			$("#center_wrap").html("")
 			var i=$(this).index();
 			var arr=datas[i-1].category2;
@@ -165,8 +164,6 @@
 					li.innerText=arr[j].sgroup[k].title;
 					ul.appendChild(li)
 				}
-				console.log(ul)
-				console.log(datas)
 			$("#center_wrap").append(ul)
 			}
 			//列表页
