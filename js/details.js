@@ -55,7 +55,9 @@ $(function(){
 					$(".old_prier").html('价格<s>￥'+arr.price+'-'+arr.old_price+'</s>')
 					$(".prier").html('￥'+arr.price+'-'+arr.old_price+' <span>惊喜价</span>')
 					$(".shopp_name").html(arr.goods_name)
-					
+					$(".return").click(function(){
+						location.href="index.html"
+					})
 				},
 				error:function(err){
 					console.log(err)
