@@ -1,4 +1,5 @@
 $(function(){
+	var x=0;
 	function rem(doc,win){
 	         	let docEl=doc.documentElement;//html  考虑以及兼容了 屏幕旋转的事件
 	         	//判断事件orientatonchange 横屏 事件 或resize
@@ -62,7 +63,35 @@ $(function(){
 						location.href="details.html";
 					})
 					$("body").append('<script src="js/Swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>')
-					
+					var strs="";
+					$.each(arr,function(index,ele){
+                        strs+=' <div class="click" pid="'+ele.goods_id+'">'
+				        	     	+'<img src="'+ele.image+'" alt="">'
+				                    +'<div class="contents">'
+				                    	+'<p>'+ele.goods_name+'</p>'
+				                    	+'<p>￥'+ele.price+'</p>'
+				                    	+'<p>月销3笔 免邮费</p>'
+				                    +'</div>'
+				        	     +'</div>'
+					})
+					$(".like_conter_wrap2").html(strs)
+					$(".click").click(function(){
+						localStorage.pid=$(this).attr("pid")
+						location.href="details.html"
+					})
+
+                    $(".cut").click(function(){
+                    	x++;
+                    	if (x%2==0) {
+                    		$(".like_conter_wrap").css("display","block")
+                    		$(".like_conter_wrap2").css("display","none")
+                    	}else{
+                            $(".like_conter_wrap").css("display","none")
+                            $(".like_conter_wrap2").css("display","block")
+                    	}
+                    });
+
+
 				},
 				error:function(err){
 					console.log(err)
